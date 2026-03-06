@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sayang Express Catering (SEC) | Katering & Event Space Premium Sepang</title>
+    <title>Sayang Express Catering | Katering & Event Space Premium Sepang</title>
     <meta name="description" content="Katering premium & event space di Sepang. Perkahwinan, korporat, aqiqah & buffet Ramadan. Dipercayai oleh 87+ pelanggan. Hubungi kami!">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -928,7 +928,34 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 250, 245, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 24px;
+                gap: 0;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links li a {
+                display: block;
+                padding: 14px 0;
+                border-bottom: 1px solid var(--warm-dark);
+                font-size: 1rem;
+            }
+            .nav-links li:last-child a { border-bottom: none; }
+            .nav-links .nav-cta {
+                display: inline-block;
+                text-align: center;
+                margin-top: 8px;
+            }
             .mobile-toggle { display: block; }
             section { padding: 70px 24px; }
             .navbar { padding: 14px 24px; }
@@ -965,12 +992,12 @@
             <div class="hero-content">
                 <div class="hero-tag">
                     <span class="dot"></span>
-                    SEC Group — Katering & Event Space
+                    Sayang Express Catering — Katering & Event Space
                 </div>
                 <h1>Katering Premium &<br>Event Space <span class="highlight">Sepang</span></h1>
                 <p class="hero-desc">Dari hidangan eksklusif ke dewan perkahwinan impian — semuanya di bawah satu bumbung. Dipercayai oleh lebih 3,000 tetamu termasuk majlis Fattah Amin & Amira.</p>
                 <div class="hero-actions">
-                    <a href="https://wa.me/60129776187?text=Salam,%20saya%20berminat%20dengan%20pakej%20katering%20SEC" class="btn-fill">💬 WhatsApp Kami</a>
+                    <a href="https://wa.me/60129776187?text=Salam,%20saya%20berminat%20dengan%20pakej%20Sayang%20Express%20Catering" class="btn-fill">💬 WhatsApp Kami</a>
                     <a href="#servis" class="btn-ghost">Lihat Servis</a>
                 </div>
                 <div class="hero-proof">
@@ -1011,7 +1038,7 @@
         <div class="services-header">
             <div class="section-tag"><span class="tag-line"></span> Servis Kami</div>
             <h2 class="section-heading">Semua Keperluan Majlis<br>Dalam Satu Tempat</h2>
-            <p class="section-sub">Tiga bahagian utama di bawah SEC Group, disatukan untuk memberikan pengalaman majlis yang lengkap.</p>
+            <p class="section-sub">Tiga bahagian utama di bawah Sayang Express Catering, disatukan untuk memberikan pengalaman majlis yang lengkap.</p>
         </div>
         <div class="services-grid">
             <div class="service-item">
@@ -1213,7 +1240,7 @@
             <h2>Sedia Untuk Majlis Impian Anda?</h2>
             <p>Hubungi kami hari ini untuk berbincang tentang pakej katering atau tempahan dewan. Kami sedia membantu dari mula hingga habis!</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/60129776187?text=Salam,%20saya%20berminat%20dengan%20pakej%20katering%20SEC" class="btn-wa">💬 WhatsApp Katering</a>
+                <a href="https://wa.me/60129776187?text=Salam,%20saya%20berminat%20dengan%20pakej%20Sayang%20Express%20Catering" class="btn-wa">💬 WhatsApp Katering</a>
                 <a href="https://wa.me/60103626187?text=Salam,%20saya%20berminat%20dengan%20Sayang%20Avenue%20Event%20Space" class="btn-white">🏛️ WhatsApp Event Space</a>
             </div>
             <p class="cta-note">Atau hubungi: 012-977 6187 (Katering) · 010-362 6187 (Event Space)</p>
@@ -1225,7 +1252,7 @@
         <div class="footer-grid">
             <div>
                 <div class="footer-brand">Sayang <span>Express</span></div>
-                <p class="footer-tagline">SEC Group SDN BHD — Katering premium, event space, dan pengurusan acara di Sepang, Selangor. Setiap majlis dijaga macam majlis keluarga sendiri.</p>
+                <p class="footer-tagline">Sayang Express Catering — Katering premium, event space, dan pengurusan acara di Sepang, Selangor. Setiap majlis dijaga macam majlis keluarga sendiri.</p>
             </div>
             <div class="footer-col">
                 <h4>Servis</h4>
@@ -1251,16 +1278,26 @@
             </div>
         </div>
         <div class="footer-bottom">
-            © 2025 SEC Group SDN BHD. Hak cipta terpelihara.
+            © 2025 Sayang Express Catering. Hak cipta terpelihara.
         </div>
     </footer>
 
     <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/60129776187?text=Salam,%20saya%20berminat%20dengan%20pakej%20SEC" class="float-wa" title="WhatsApp">💬</a>
+    <a href="https://wa.me/60129776187?text=Salam,%20saya%20berminat%20dengan%20pakej%20Sayang%20Express%20Catering" class="float-wa" title="WhatsApp">💬</a>
 
     <script>
         window.addEventListener('scroll', () => {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        document.querySelector('.mobile-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('open');
+            });
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(a => {
