@@ -740,6 +740,64 @@
         .loc-detail h4 { font-size: 0.9rem; font-weight: 700; color: var(--forest); margin-bottom: 2px; }
         .loc-detail p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
 
+        /* ===== BOOKING ===== */
+        .booking-section {
+            background: var(--warm-light);
+        }
+
+        .booking-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .booking-steps {
+            margin-top: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .booking-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: var(--terracotta);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .booking-step h4 { font-size: 0.9rem; font-weight: 700; color: var(--forest); margin-bottom: 2px; }
+        .booking-step p { font-size: 0.82rem; color: var(--text-light); }
+
+        .calendly-embed {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            border: 1px solid var(--warm-dark);
+            min-height: 600px;
+        }
+
+        @media (max-width: 1024px) {
+            .booking-inner { grid-template-columns: 1fr; gap: 40px; }
+            .calendly-embed { min-height: 500px; }
+        }
+
         /* ===== CTA ===== */
         .cta-section {
             background: var(--terracotta);
@@ -977,6 +1035,7 @@
             <li><a href="#galeri">Galeri</a></li>
             <li><a href="#ulasan">Ulasan</a></li>
             <li><a href="#lokasi">Lokasi</a></li>
+            <li><a href="#booking">Booking</a></li>
             <li><a href="https://wa.me/60129776187" class="nav-cta">Hubungi Kami</a></li>
         </ul>
         <button class="mobile-toggle">
@@ -1228,6 +1287,45 @@
             </div>
             <div class="location-map-wrap">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5!2d101.6833!3d2.8445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdc724f239a5d3%3A0xa711675d049dd828!2sSayang%20Express%20Catering%20(SEC)%20Group!5e0!3m2!1sen!2smy!4v1709000000000!5m2!1sen!2smy" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="booking-section">
+        <div class="booking-inner">
+            <div class="booking-text">
+                <div class="section-tag"><span class="tag-line"></span> Tempahan</div>
+                <h2 class="section-heading">Book Site Visit<br>Dalam Beberapa Klik</h2>
+                <p class="section-sub">Nak tengok dewan sebelum confirm? Pilih tarikh dan masa yang sesuai — kami akan sediakan lawatan untuk anda.</p>
+                <div class="booking-steps">
+                    <div class="booking-step">
+                        <div class="step-num">1</div>
+                        <div>
+                            <h4>Pilih Tarikh & Masa</h4>
+                            <p>Pilih slot yang available dari calendar</p>
+                        </div>
+                    </div>
+                    <div class="booking-step">
+                        <div class="step-num">2</div>
+                        <div>
+                            <h4>Isi Maklumat</h4>
+                            <p>Nama, nombor telefon & jenis majlis</p>
+                        </div>
+                    </div>
+                    <div class="booking-step">
+                        <div class="step-num">3</div>
+                        <div>
+                            <h4>Confirmed!</h4>
+                            <p>Anda akan terima confirmation terus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="booking-calendly">
+                <div class="calendly-embed">
+                    <iframe src="https://calendly.com/sayangavenueeventspaces" frameborder="0" scrolling="yes" style="width:100%; height:100%; min-height:580px; border-radius:16px;"></iframe>
+                </div>
             </div>
         </div>
     </section>
