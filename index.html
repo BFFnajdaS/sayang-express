@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayang Express Catering (SEC) | Katering & Event Space Premium Sepang</title>
+    <meta name="description" content="Katering premium & event space di Sepang. Perkahwinan, korporat, aqiqah & buffet Ramadan. Dipercayai oleh 87+ pelanggan. Hubungi kami!">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --terracotta: #C2654A;
+            --terracotta-light: #D4795F;
+            --terracotta-dark: #A8523A;
+            --warm: #F5E6D3;
+            --warm-light: #FBF4EC;
+            --warm-dark: #E8D5BF;
+            --forest: #2D4739;
+            --forest-light: #3A5C4A;
+            --sage: #8BA888;
+            --cream: #FFFAF5;
+            --dark: #1E1E1E;
+            --text: #3A3530;
+            --text-light: #7A7168;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 16px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 250, 245, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+            padding: 12px 48px;
+        }
+
+        .nav-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: var(--forest);
+            text-decoration: none;
+        }
+
+        .nav-logo span {
+            color: var(--terracotta);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--terracotta); }
+
+        .nav-links .nav-cta {
+            background: var(--terracotta);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-links .nav-cta:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            width: 28px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--forest);
+            position: absolute;
+            transition: 0.3s;
+        }
+
+        .mobile-toggle span:nth-child(1) { top: 0; }
+        .mobile-toggle span:nth-child(2) { top: 9px; }
+        .mobile-toggle span:nth-child(3) { top: 18px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 48px 80px;
+            position: relative;
+            overflow: hidden;
+            background: var(--warm-light);
+        }
+
+        .hero-bg-shape {
+            position: absolute;
+            right: -200px;
+            top: -200px;
+            width: 900px;
+            height: 900px;
+            border-radius: 50%;
+            background: var(--warm);
+            opacity: 0.6;
+        }
+
+        .hero-bg-shape2 {
+            position: absolute;
+            right: 100px;
+            bottom: -300px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(194, 101, 74, 0.06);
+        }
+
+        .hero-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-content { animation: slideIn 0.8s ease-out; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            border: 1px solid var(--warm-dark);
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .hero-tag .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--terracotta);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            line-height: 1.15;
+            color: var(--forest);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--terracotta);
+            font-style: italic;
+            position: relative;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(194, 101, 74, 0.15);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .hero-desc {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            max-width: 500px;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .btn-fill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--terracotta);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-fill:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(194, 101, 74, 0.25);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--forest);
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 2px solid var(--warm-dark);
+            transition: all 0.3s;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--forest);
+            background: var(--forest);
+            color: var(--white);
+        }
+
+        .hero-proof {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .hero-proof-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            width: 20px;
+            height: 20px;
+            background: var(--terracotta);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        .hero-proof-text {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .hero-proof-text strong {
+            color: var(--forest);
+            font-weight: 700;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: slideIn 1s ease-out;
+        }
+
+        .hero-card-main {
+            width: 100%;
+            aspect-ratio: 4/5;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(160deg, var(--terracotta), var(--terracotta-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+        }
+
+        .hero-card-main .placeholder-content {
+            text-align: center;
+            color: var(--white);
+            padding: 40px;
+        }
+
+        .placeholder-content .big-icon { font-size: 4rem; margin-bottom: 16px; }
+        .placeholder-content p { font-size: 0.9rem; opacity: 0.8; }
+
+        .hero-floating-card {
+            position: absolute;
+            bottom: -20px;
+            left: -40px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .floating-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(194, 101, 74, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .floating-text h4 { font-size: 0.85rem; font-weight: 700; color: var(--forest); }
+        .floating-text p { font-size: 0.75rem; color: var(--text-light); }
+
+        .hero-floating-card2 {
+            position: absolute;
+            top: 40px;
+            right: -30px;
+            background: var(--forest);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 18px 22px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            animation: float 3s ease-in-out 1s infinite;
+        }
+
+        .floating2-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            color: var(--sage);
+        }
+
+        .floating2-text { font-size: 0.7rem; opacity: 0.7; margin-top: 2px; }
+
+        /* ===== SECTION STYLING ===== */
+        section { padding: 100px 48px; }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .section-tag .tag-line {
+            width: 24px;
+            height: 2px;
+            background: var(--terracotta);
+            border-radius: 2px;
+        }
+
+        .section-heading {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            color: var(--forest);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 550px;
+        }
+
+        /* ===== SERVICES (SERVIS) ===== */
+        .services {
+            background: var(--cream);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .services-header .section-sub { margin: 0 auto; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 32px;
+            border: 1px solid var(--warm-dark);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--terracotta);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+            transform-origin: left;
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+            border-color: transparent;
+        }
+
+        .service-item:hover::after { transform: scaleX(1); }
+
+        .service-emoji {
+            width: 56px;
+            height: 56px;
+            background: var(--warm);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .service-item h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: var(--forest);
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            color: var(--text-light);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        .service-item ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .service-item ul li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-item ul li::before {
+            content: '✓';
+            color: var(--terracotta);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        /* ===== WHY US ===== */
+        .why-section {
+            background: var(--forest);
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='1'%3E%3Ccircle cx='20' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .why-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-inner .section-tag { color: var(--sage); }
+        .why-inner .section-tag .tag-line { background: var(--sage); }
+        .why-inner .section-heading { color: var(--white); }
+        .why-inner .section-sub { color: rgba(255,255,255,0.5); }
+
+        .why-header { text-align: center; margin-bottom: 60px; }
+        .why-header .section-sub { margin: 0 auto; }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 36px 24px;
+        }
+
+        .why-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
+            color: var(--sage);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .why-item h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .why-item p {
+            color: rgba(255,255,255,0.45);
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-section { text-align: center; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 16px;
+            max-width: 1100px;
+            margin: 50px auto 0;
+        }
+
+        .gallery-cell {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-cell:hover { transform: scale(1.02); }
+        .gallery-cell:first-child { grid-row: span 2; aspect-ratio: auto; }
+
+        .gallery-fill {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .gallery-fill .gf-icon { font-size: 2.5rem; }
+
+        .gc1 { background: linear-gradient(135deg, #C2654A, #A8523A); }
+        .gc2 { background: linear-gradient(135deg, #2D4739, #3A5C4A); }
+        .gc3 { background: linear-gradient(135deg, #8BA888, #6B8E6B); }
+        .gc4 { background: linear-gradient(135deg, #D4795F, #C2654A); }
+        .gc5 { background: linear-gradient(135deg, #3A5C4A, #2D4739); }
+
+        /* ===== TESTIMONIALS ===== */
+        .reviews-section {
+            background: var(--warm-light);
+        }
+
+        .reviews-header { text-align: center; margin-bottom: 50px; }
+        .reviews-header .section-sub { margin: 0 auto; }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .review-item {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px;
+            border: 1px solid var(--warm-dark);
+        }
+
+        .review-stars-row {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 16px;
+        }
+
+        .review-stars-row .star { width: 16px; height: 16px; }
+
+        .review-item blockquote {
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .review-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--warm);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--terracotta);
+            margin-top: 8px;
+        }
+
+        /* ===== LOCATION ===== */
+        .location-section { }
+
+        .location-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .location-map-wrap {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+
+        .location-map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-details-list {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .loc-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .loc-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            background: var(--warm);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .loc-detail h4 { font-size: 0.9rem; font-weight: 700; color: var(--forest); margin-bottom: 2px; }
+        .loc-detail p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: var(--terracotta);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-circle {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cta-circle-1 { top: -250px; left: -100px; }
+        .cta-circle-2 { bottom: -300px; right: -100px; width: 600px; height: 600px; }
+
+        .cta-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--white);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .cta-inner p {
+            color: rgba(255,255,255,0.75);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 36px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-wa:hover {
+            background: #20BD5A;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: var(--terracotta);
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .cta-note {
+            margin-top: 24px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            padding: 60px 48px 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .footer-brand span { color: var(--terracotta); font-style: italic; }
+
+        .footer-tagline {
+            color: rgba(255,255,255,0.35);
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover { color: var(--terracotta-light); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+            color: rgba(255,255,255,0.2);
+            font-size: 0.8rem;
+        }
+
+        /* ===== FLOATING WA ===== */
+        .float-wa {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .float-wa:hover { transform: scale(1.1); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+            .hero-visual { max-width: 400px; margin: 0 auto; }
+            .services-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+            .why-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-cell:first-child { grid-row: span 1; aspect-ratio: 4/3; }
+            .reviews-grid { grid-template-columns: 1fr; max-width: 500px; }
+            .location-inner { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            section { padding: 70px 24px; }
+            .navbar { padding: 14px 24px; }
+            .hero { padding: 100px 24px 60px; }
+            .why-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-floating-card, .hero-floating-card2 { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">Sayang <span>Express</span></a>
+        <ul class="nav-links">
+            <li><a href="#servis">Servis</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#ulasan">Ulasan</a></li>
+            <li><a href="#lokasi">Lokasi</a></li>
+            <li><a href="https://wa.me/60129776187" class="nav-cta">Hubungi Kami</a></li>
+        </ul>
+        <button class="mobile-toggle">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg-shape"></div>
+        <div class="hero-bg-shape2"></div>
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="dot"></span>
+                    SEC Group — Katering & Event Space
+                </div>
+                <h1>Katering Premium &<br>Event Space <span class="highlight">Sepang</span></h1>
+                <p class="hero-desc">Dari hidangan eksklusif ke dewan perkahwinan impian — semuanya di bawah satu bumbung. Dipercayai oleh lebih 3,000 tetamu termasuk majlis Fattah Amin & Amira.</p>
+                <div class="hero-actions">
+                    <a href="https://wa.me/60129776187?text=Salam,%20saya%20berminat%20dengan%20pakej%20katering%20SEC" class="btn-fill">💬 WhatsApp Kami</a>
+                    <a href="#servis" class="btn-ghost">Lihat Servis</a>
+                </div>
+                <div class="hero-proof">
+                    <div class="hero-proof-stars">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                    <p class="hero-proof-text"><strong>5.0 sempurna</strong> — 87+ ulasan Google</p>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card-main">
+                    <div class="placeholder-content">
+                        <div class="big-icon">🍽️</div>
+                        <p>Gambar Setup Katering /<br>Event Terkini</p>
+                    </div>
+                </div>
+                <div class="hero-floating-card">
+                    <div class="floating-icon">⭐</div>
+                    <div class="floating-text">
+                        <h4>Fattah & Amira's Event</h4>
+                        <p>3,000+ tetamu dilayan</p>
+                    </div>
+                </div>
+                <div class="hero-floating-card2">
+                    <div class="floating2-num">87+</div>
+                    <div class="floating2-text">Ulasan 5 Bintang</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="servis" class="services">
+        <div class="services-header">
+            <div class="section-tag"><span class="tag-line"></span> Servis Kami</div>
+            <h2 class="section-heading">Semua Keperluan Majlis<br>Dalam Satu Tempat</h2>
+            <p class="section-sub">Tiga bahagian utama di bawah SEC Group, disatukan untuk memberikan pengalaman majlis yang lengkap.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-emoji">🍛</div>
+                <h3>Sayang Express Catering</h3>
+                <p>Servis katering premium untuk semua jenis majlis. Dari 50 hingga 3,000+ pax.</p>
+                <ul>
+                    <li>Perkahwinan & Sanding</li>
+                    <li>Aqiqah & Cukur Jambul</li>
+                    <li>Acara Korporat</li>
+                    <li>Buffet Ramadan</li>
+                    <li>Order Luar / Delivery</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <div class="service-emoji">🏛️</div>
+                <h3>Sayang Avenue Event Space</h3>
+                <p>Dewan & event space serba lengkap di Bandar Serenia, Sepang.</p>
+                <ul>
+                    <li>Dewan Perkahwinan</li>
+                    <li>Birthday & Anniversary</li>
+                    <li>Corporate Dinner</li>
+                    <li>Seminar & Workshop</li>
+                    <li>Site Visit via Calendly</li>
+                </ul>
+            </div>
+            <div class="service-item">
+                <div class="service-emoji">🎯</div>
+                <h3>Sayang Express Enterprise</h3>
+                <p>Pengurusan acara dari A-Z. Biar kami uruskan semuanya untuk anda.</p>
+                <ul>
+                    <li>Event Management</li>
+                    <li>Dekorasi & Pelamin</li>
+                    <li>PA System & DJ</li>
+                    <li>Fotografi & Videografi</li>
+                    <li>Pakej Lengkap</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-section">
+        <div class="why-pattern"></div>
+        <div class="why-inner">
+            <div class="why-header">
+                <div class="section-tag"><span class="tag-line"></span> Kenapa SEC</div>
+                <h2 class="section-heading">Angka Berbicara</h2>
+                <p class="section-sub">SEC bukan sekadar katering biasa — kami adalah rakan majlis yang anda boleh percayai.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-num">87+</div>
+                    <h4>Ulasan Google</h4>
+                    <p>Rating sempurna 5.0 bintang dari pelanggan sebenar</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-num">3K+</div>
+                    <h4>Tetamu Dilayan</h4>
+                    <p>Termasuk majlis Fattah Amin & Amira di A Park Puchong</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-num">3</div>
+                    <h4>Servis Dalam 1</h4>
+                    <p>Katering, dewan, dan event management di bawah satu bumbung</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-num">50–3K</div>
+                    <h4>Pax Capacity</h4>
+                    <p>Dari majlis intimate hingga mega event ribuan tetamu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="galeri" class="gallery-section">
+        <div class="section-tag"><span class="tag-line"></span> Galeri</div>
+        <h2 class="section-heading">Kenangan Manis Bersama SEC</h2>
+        <p class="section-sub" style="margin: 0 auto;">Setiap majlis yang kami uruskan adalah komitmen terhadap kualiti dan keindahan.</p>
+        <div class="gallery-grid">
+            <div class="gallery-cell">
+                <div class="gallery-fill gc1">
+                    <span class="gf-icon">🍽️</span>
+                    <span>Setup Buffet</span>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="gallery-fill gc2">
+                    <span class="gf-icon">🏛️</span>
+                    <span>Sayang Avenue Hall</span>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="gallery-fill gc3">
+                    <span class="gf-icon">💐</span>
+                    <span>Dekorasi</span>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="gallery-fill gc4">
+                    <span class="gf-icon">👨‍🍳</span>
+                    <span>Team SEC</span>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="gallery-fill gc5">
+                    <span class="gf-icon">🎊</span>
+                    <span>Majlis Perkahwinan</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="ulasan" class="reviews-section">
+        <div class="reviews-header">
+            <div class="section-tag"><span class="tag-line"></span> Ulasan</div>
+            <h2 class="section-heading">Apa Kata Pelanggan Kami</h2>
+            <p class="section-sub">87+ ulasan dengan rating sempurna 5.0 di Google. Kami bangga dengan setiap maklum balas.</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-item">
+                <div class="review-stars-row">
+                    <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+                </div>
+                <blockquote>"The food was really nice! Everything was delicious and well-prepared. The food is fresh, warm, and nicely presented. Definitely recommended for any event!"</blockquote>
+                <div class="review-author">— Pelanggan Google</div>
+                <div class="review-badge">✓ Verified Review</div>
+            </div>
+            <div class="review-item">
+                <div class="review-stars-row">
+                    <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+                </div>
+                <blockquote>"Attended Fattah & Amira's fan event. Love the food, the crew very helpful and polite. Good job!"</blockquote>
+                <div class="review-author">— Pelanggan Google</div>
+                <div class="review-badge">✓ Verified Review</div>
+            </div>
+            <div class="review-item">
+                <div class="review-stars-row">
+                    <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+                </div>
+                <blockquote>"My sister's wedding was here. Everything is tip top, friendly to everyone. The food is delicious and the place is clean. Love it!"</blockquote>
+                <div class="review-author">— Pelanggan Google</div>
+                <div class="review-badge">✓ Verified Review</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="lokasi" class="location-section">
+        <div class="location-inner">
+            <div>
+                <div class="section-tag"><span class="tag-line"></span> Lokasi</div>
+                <h2 class="section-heading">Mudah Dijumpai<br>di Bandar Serenia</h2>
+                <p class="section-sub">Terletak di Pusat Perindustrian Cipta Selatan, Sepang — strategik dan mudah diakses.</p>
+                <div class="location-details-list">
+                    <div class="loc-detail">
+                        <div class="loc-icon">📍</div>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>13, Jalan Cipta Serenia 4, Pusat Perindustrian Cipta Selatan, Bandar Serenia, 43900 Sepang, Selangor</p>
+                        </div>
+                    </div>
+                    <div class="loc-detail">
+                        <div class="loc-icon">📞</div>
+                        <div>
+                            <h4>Katering</h4>
+                            <p>012-977 6187</p>
+                        </div>
+                    </div>
+                    <div class="loc-detail">
+                        <div class="loc-icon">🏛️</div>
+                        <div>
+                            <h4>Event Space</h4>
+                            <p>010-362 6187</p>
+                        </div>
+                    </div>
+                    <div class="loc-detail">
+                        <div class="loc-icon">🕐</div>
+                        <div>
+                            <h4>Waktu Operasi</h4>
+                            <p>Isnin – Jumaat: 9:00 AM – 5:00 PM<br>Event Space: Setiap hari 9:00 AM – 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="location-map-wrap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5!2d101.6833!3d2.8445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdc724f239a5d3%3A0xa711675d049dd828!2sSayang%20Express%20Catering%20(SEC)%20Group!5e0!3m2!1sen!2smy!4v1709000000000!5m2!1sen!2smy" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-circle cta-circle-1"></div>
+        <div class="cta-circle cta-circle-2"></div>
+        <div class="cta-inner">
+            <h2>Sedia Untuk Majlis Impian Anda?</h2>
+            <p>Hubungi kami hari ini untuk berbincang tentang pakej katering atau tempahan dewan. Kami sedia membantu dari mula hingga habis!</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/60129776187?text=Salam,%20saya%20berminat%20dengan%20pakej%20katering%20SEC" class="btn-wa">💬 WhatsApp Katering</a>
+                <a href="https://wa.me/60103626187?text=Salam,%20saya%20berminat%20dengan%20Sayang%20Avenue%20Event%20Space" class="btn-white">🏛️ WhatsApp Event Space</a>
+            </div>
+            <p class="cta-note">Atau hubungi: 012-977 6187 (Katering) · 010-362 6187 (Event Space)</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Sayang <span>Express</span></div>
+                <p class="footer-tagline">SEC Group SDN BHD — Katering premium, event space, dan pengurusan acara di Sepang, Selangor. Setiap majlis dijaga macam majlis keluarga sendiri.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Servis</h4>
+                <a href="#">Pakej Katering</a>
+                <a href="#">Event Space</a>
+                <a href="#">Event Management</a>
+                <a href="#">Buffet Ramadan</a>
+                <a href="#">Order Luar</a>
+            </div>
+            <div class="footer-col">
+                <h4>Pautan</h4>
+                <a href="#servis">Servis</a>
+                <a href="#galeri">Galeri</a>
+                <a href="#ulasan">Ulasan</a>
+                <a href="#lokasi">Lokasi</a>
+                <a href="https://calendly.com/sayangavenueeventspaces">Book Site Visit</a>
+            </div>
+            <div class="footer-col">
+                <h4>Ikuti Kami</h4>
+                <a href="https://www.instagram.com/secatering.official/">Instagram</a>
+                <a href="https://www.tiktok.com/@sayangavenueventspaces">TikTok</a>
+                <a href="https://beacons.ai/sayangexpresscatering">Beacons</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 SEC Group SDN BHD. Hak cipta terpelihara.
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/60129776187?text=Salam,%20saya%20berminat%20dengan%20pakej%20SEC" class="float-wa" title="WhatsApp">💬</a>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-item, .review-item, .why-item, .gallery-cell').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            obs.observe(el);
+        });
+    </script>
+</body>
+</html>
